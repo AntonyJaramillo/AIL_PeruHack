@@ -11,6 +11,8 @@ import {
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
 
+//COLOCAR AQUI EL API_KEY GENERADO EN OPEN IA
+
 const API_KEY = "";
 
 export const Writing = () => {
