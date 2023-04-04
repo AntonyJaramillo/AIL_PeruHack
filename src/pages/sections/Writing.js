@@ -11,6 +11,7 @@ import {
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
 
+
 const API_KEY = ""; //Put here your API_KEY
 
 export const Writing = () => {
