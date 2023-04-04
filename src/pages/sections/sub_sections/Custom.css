@@ -21,3 +21,12 @@
 .custom-container h2:hover{
     transform: scale(1.2);
 }
+
+.review-words-option img{
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.review-words-option img:hover{
+    transform: scale(1.2);
+}

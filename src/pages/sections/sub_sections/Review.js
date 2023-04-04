@@ -20,6 +20,8 @@ export const Review = ({ListWords}) => {
             <Custom
               wordx={word.word}
               wordxMean={word.mean}
+              wordxState={word.state}
+              wordxID={word.id}
             />
           </div>
         </Carousel.Item>

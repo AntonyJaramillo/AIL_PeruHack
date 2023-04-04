@@ -12,10 +12,14 @@
     justify-content: space-evenly;
 }
 
-.words-content p{
+.my-words-description{
     font-size: 2rem;
+    margin-top: 6rem;
 }
-
+.my-words-description span img{
+    width: 50px;
+    margin-left: 0.5rem;
+}
 .study-option{
     height: 100%;
     width: 100%;
@@ -23,8 +27,6 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-
-
 }
 .vocabulary-option , .review-option{
     width: 450px;
@@ -60,8 +62,13 @@
     
 }
 
-.review-open p{
+.review-open-description{
     color:#222831;
+    font-size: 2rem;
+    margin-top: 6rem;
+}
+.review-open p span img{
+    width: 50px;
 }
 
 .btn-back-container{
@@ -76,15 +83,47 @@
     left: 300px;
 }
 
+.probando-xd{
+    position: relative;
+}
+
 .info-container{
-    padding: 0 24%;
+    z-index: 20;
+    position: absolute;
+    /* padding: 0 24%; */
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
 
+
 /* .my-modal{
   position: absolute;
   top: 20%;
 } */
+
+.carousel-btns-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* justify-content: space-evenly; */
+    width: 100%;
+}
+.btns-container-options{
+    margin-left: 2rem;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.btn-option-selected{
+    width: 100%;
+}
+
+.btn-back-wordLearned{
+    position:fixed;
+    bottom: 50px;
+    right: 50px;
+}

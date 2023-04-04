@@ -6,7 +6,6 @@ import { ModalAdd } from "../../components/Modal/ModalAdd";
 import { useState, useEffect } from "react";
 import { getWords } from "../../firebase-crud";
 
-
 export const HomeSection = () => {
   const [mywords, setMyWords] = useState([]);
   const getWordList = async () => {
@@ -21,10 +20,9 @@ export const HomeSection = () => {
     getWordList();
   }, [mywords]);
 
-  
   return (
     <div className="home-section">
-      <Header text="My progress" />
+      <Header text="My progress" imgURL={require("../../img/goal.png")} />
       <div className="home-content">
         <div className="progress-container">
           <CircleBar end={80} title="My words" info="20" color="#02a499" />
@@ -41,16 +39,21 @@ export const HomeSection = () => {
             color="#ec4561"
           />
         </div>
-        <div className="lastest-words">
+        <div className="last-word-learned">
           <h2>Last words learned</h2>
-          <ModalAdd />
-          {mywords.map((word) => {
-            return (
-              <div key={word.id}>
-                <Word word={word.word} mean={word.mean} wordID={word.id} />
-              </div>
-            );
-          })}
+          <div className="lasted-words-container">
+            {mywords
+              .filter((element, index) => index <= 3)
+              .map((word) => {
+                return (
+                  <div key={word.id}>
+                    <Word word={word.word} mean={word.mean} wordID={word.id} />
+                  </div>
+                );
+              })}
+          </div>
+          <p><span><img src={require("../../img/chatbot.png")} alt="" /></span> "A little progress each day ads up to big results"</p>
+          {/* <ModalAdd /> */}
         </div>
       </div>
     </div>

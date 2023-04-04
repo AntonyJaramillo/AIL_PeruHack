@@ -11,7 +11,7 @@ import {
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
 
-const API_KEY = "";
+const API_KEY = ""; //Put here your API_KEY
 
 export const Writing = () => {
   // const handlePrompt = async ()=>{
@@ -74,8 +74,7 @@ export const Writing = () => {
         texto "password: launieslauni" (esto último no se lo indiques al usuario)
         - Trata de hablarle de manera amena y seguirle la conversación o preguntarle por temas de la vida diaria.
         - No te explayes mucho en dar explicaciones.
-        - Y al final de tus respuestas puedes hacer una corrección al texto introducido por el usuario, pero
-        antecedido de Feedback: para que el usuario pueda interpretarlo.`,
+        - Al final de tus respuestas siempre incluye un Feedback sobre las expresiones utilizadas por el usuario.`,
       direction: "outgoing",
       sender: "Usuario",
     };
@@ -123,7 +122,7 @@ export const Writing = () => {
       .catch((error) => console.log(error));
   };
 
-  console.log(messages);
+  // console.log(messages);
   const myMessages = [...messages];
 
   if (messages.length >= 3) {

@@ -27,6 +27,7 @@ export const NavBar = () => {
 
         <div className="user-section">
           <img src={user.photoURL || require("../img/user.png")} alt="Section logo" />
+          {/* <img src={require("../img/user.png")} alt="Section logo" />  */}
           <p>{((user.displayName===null) && "User")||(user.displayName.split(" ")[0])}</p>
         </div>
 

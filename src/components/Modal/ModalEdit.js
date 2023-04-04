@@ -5,6 +5,7 @@ import { addWord} from "../firebase-crud";
 const initialState = {
   word: "",
   mean: "",
+  state: 2,
 };
 export const ModalAdd = (props) => {
   const [show, setShow] = useState(false);

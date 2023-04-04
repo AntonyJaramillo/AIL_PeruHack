@@ -35,8 +35,12 @@ Login Styles
 }
 
 .login-container form h2{
-    font-size: 2.5rem;
+    font-size: 2rem;
     letter-spacing: 0.4rem;
+}
+
+.logo-container-transform{
+    transform: scale(1.3);
 }
 
 

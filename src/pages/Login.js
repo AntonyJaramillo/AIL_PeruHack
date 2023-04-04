@@ -1,14 +1,12 @@
-
 import { Logo } from "../components/Logo";
 import "./Login.css";
 
 import { useState } from "react";
 import { useAuth } from "../context/authContext";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Alert } from "../components/Alert";
 
 export const Login = () => {
-
   const [user, setUser] = useState({ email: "", password: "" });
   const { login, loginWithGoogle, resetPassword } = useAuth();
   const navigate = useNavigate();
@@ -25,10 +23,9 @@ export const Login = () => {
       await login(user.email, user.password);
       navigate("/home");
     } catch (error) {
-      if(error.code==="auth/user-not-found"){
+      if (error.code === "auth/user-not-found") {
         setError("User not found. Please Sing Up");
       }
-      
     }
   };
 
@@ -59,7 +56,9 @@ export const Login = () => {
       <div className="login-container">
         <form action="" onSubmit={handleSubmit}>
           <h2>Sign In</h2>
-          <Logo />
+          <div className="logo-container-transform">
+            <Logo />
+          </div>
           <div className="input-box">
             <label htmlFor="">Email</label>
             <input

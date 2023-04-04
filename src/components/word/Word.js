@@ -60,7 +60,7 @@ export const Word = ({ word, mean, wordID }) => {
   //   window.speechSynthesis.speak(utterance);
   // };
 
-  const speack = (wordl) => {
+  const speakv = (wordl) => {
     const ut = new SpeechSynthesisUtterance(wordl);
     ut.lang = "en-GB";
     const voices = window.speechSynthesis.getVoices();
@@ -75,7 +75,7 @@ export const Word = ({ word, mean, wordID }) => {
         <span>|</span>
         <span className="word-mean">{mean}</span>
         <div className="word-actions">
-          <img onClick={()=>speack(word)} src={require('../../img/voice.png')} alt="Voice word option" />
+          <img onClick={()=>speakv(word)} src={require('../../img/voice.png')} alt="Voice word option" />
           <button onClick={handleShow}>
             <img src={require('../../img/edit.png')} alt="Edit word option" />
           </button>

@@ -3,16 +3,22 @@ import "./css/Reading.css";
 import { uploadBooks, resFile } from "../../firebase-config";
 import { useState, useEffect } from "react";
 import { MyPDFViewer } from "../../components/PDF/MyPDFViewer";
+// import { PDFimage } from "../../components/PDF/PDFimage";
+// import { Dic } from "../../components/DicTraductor/Dic";
 
 export const Reading = () => {
   const [file, setfile] = useState(null);
   const [respfiles, setRespFiles] = useState(0);
+  // const [paths, setPaths] = useState(null);
+  //!AGREGADO
+  const [path, setPath] = useState(null);
+  //!
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const resultado = await uploadBooks(file.filex, file.name);
-      console.log(resultado);
+      // console.log(resultado);
       myFunction();
     } catch (error) {
       console.error(error);
@@ -28,31 +34,27 @@ export const Reading = () => {
       const res = await resFile();
       // console.log(res);
       // Utiliza la constante "res" aquí
+      // console.log(res.items[0]._location.path_);
+      // const pathItems = res.items.map(item =>item._location.path_)
+      // console.log(pathItems);
+      // setPaths(pathItems);
+      //!AGREGADO
+      if (res.items.length >= 1) {
+        setPath(res.items[0]._location.path_);
+      }
+      //!
       setRespFiles(res.items.length);
     } catch (error) {
       console.log("Ocurrió un error al obtener la constante 'res':", error);
     }
   }
 
-  console.log(`Cantidad de archivos en el repo: ${respfiles}`);
-
-  // try {
-  //   const res = await listAll(folderRef);
-  //   console.log(`La carpeta contiene ${res.items.length} elementos`);
-  //   console.log(res);
-  // } catch (error) {
-  //   console.log(
-  //     "Ocurrió un error al verificar cuántos elementos hay en la carpeta:",
-  //     error
-  //   );
-  // }
-
   return (
     <div className="reading-section">
-      <Header text="My Readings" />
+      <Header text="My Readings" imgURL={require("../../img/read.png")} />
       <div className="reading-content">
         {/* <h1>{resFile.items.length}</h1> */}
-        {((respfiles === 0) && (
+        {(respfiles === 0 && (
           <>
             <h2>
               <span>
@@ -93,11 +95,15 @@ export const Reading = () => {
             </form>
             <img src={require("../../img/Reading/reading-book.png")} alt="" />
           </>
-        ))|| 
-        (<>
-        <h1>Aqui van los pdf agregados</h1>
-        {/* <MyPDFViewer pdfUrl={require("../../prueba.pdf")}/> */}
-        <form onSubmit={handleSubmit} className="form-add-file">
+        )) || (
+          <>
+            {/* <h1>Aqui van los pdf agregados</h1> */}
+            {/* //*COMENT TEMPORAL
+            <MyPDFViewer url="books/fucking_prueba.pdf" />
+            //* */}
+            {path != null && <MyPDFViewer url={path} />}
+
+            {/* <form onSubmit={handleSubmit} className="form-add-file">
               <input
                 type="file"
                 name="file"
@@ -113,19 +119,15 @@ export const Reading = () => {
               />
 
               <div className="arrow-btn-container">
-                {/* <div className="arrow-container">
-                  <img src={require("../../img/Reading/arrow.png")} alt="" />
-                </div> */}
-                
                 <div className="add-file-container">
                   <button className="btn-addFile">
                     <span>Add File</span>
                   </button>
                 </div>
               </div>
-            </form>
-        
-        </>)}
+            </form> */}
+          </>
+        )}
       </div>
     </div>
   );

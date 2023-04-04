@@ -15,3 +15,36 @@
     margin: 2rem 0;
     flex-wrap: wrap;
 }
+.last-word-learned{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* flex-direction: column; */
+    /* flex-direction: column; */
+    
+}
+.last-word-learned h2{
+    width: 100%;
+    text-align: left;
+}
+
+.lasted-words-container{
+    padding: 0.5rem;
+    background-color: #222831;
+    border-radius: 1.5rem;
+    /* width: 500px;
+    height: 265.250px; */
+    /* margin: 0 250px; */
+}
+
+.last-word-learned p{
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.last-word-learned p span img{
+    margin-right: 0.5rem;
+    width: 50px;
+}

@@ -1,0 +1,114 @@
+.dic-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.dic-container h2{
+    font-size: 1.5rem;
+}
+
+
+.dic-container h2 span img{
+    width: 40px;
+}
+
+.result-dic{
+    min-height: 120px;
+    max-height: 250px;
+    padding: 0.5rem;
+    width: 100%;
+    margin-top: 0.5rem;
+    border: 2px solid #79bef7;
+    background-color: #c6e3fa;
+    border-radius: 1rem;
+    font-size: 1.4rem;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.dic-container input{
+    outline: none;
+    padding: 0.375rem 0.75rem;
+    font-size: .875rem;
+    line-height: 2;
+    color: #222831;
+    background-color: #c6e3fa;
+    border: 2px solid #ced4da;
+    border-radius: 0.5rem;
+    transition: border-color 0.15s ease-in-out;
+}
+
+.dic-container input:focus{
+    border-color: #79bef7;
+    outline: 0;
+}
+
+.btns-definition-translate{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+}
+
+.add-to-my-words{
+  margin-top: 10px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.add-to-my-words span{
+  font-size: 1.3rem;
+}
+.add-to-my-words span img{
+  width: 30px;
+  animation: transform 0.5s ease;
+  cursor: pointer;
+}
+
+.add-to-my-words span img:hover{
+  transform: scale(1.2);
+}
+
+/* BTN search */
+
+.button-search {
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+    height: 3rem;
+    padding: 0 2rem;
+    border-radius: 1.5rem;
+    background: #222831;
+    background-size: 400%;
+    color: #fff;
+  }
+  
+  .button-search:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .button-content-search {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .button-search::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    height: inherit;
+    border-radius: inherit;
+    background: #1caf9a;
+    transition: all 0.475s;
+  }

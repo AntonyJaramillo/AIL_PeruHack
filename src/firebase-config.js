@@ -10,6 +10,11 @@ import {
   getDownloadURL,
   connectStorageEmulator,
 } from "firebase/storage";
+
+//!TEMPORAL
+import { MyPDFViewer } from "./components/PDF/MyPDFViewer";
+//!TEMPORAL
+
 // import firebase from "firebase/app";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -22,8 +27,9 @@ const firebaseConfig = {
   projectId: "peru-hack",
   storageBucket: "peru-hack.appspot.com",
   messagingSenderId: "399670618706",
-  appId: "1:399670618706:web:495f6e7b8e2d66c34bcd8b",
+  appId: "1:399670618706:web:495f6e7b8e2d66c34bcd8b"
 };
+
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
@@ -82,14 +88,24 @@ export const resFile = async () => {
 // const fileRef = ref(storage, 'books/prueba.pdf');
 
 // getDownloadURL(fileRef).then((url) => {
-//   const iframe = document.createElement('iframe');
-//   iframe.src = url;
-//   iframe.width = '100%';
-//   iframe.height = '600px';
-//   document.body.appendChild(iframe);
+//   // const iframe = document.createElement('iframe');
+//   // iframe.src = url;
+//   // iframe.width = '100%';
+//   // iframe.height = '600px';
+//   // console.log(url);
 // }).catch((error) => {
 //   console.log('Ocurrió un error al obtener la URL del archivo PDF:', error);
 // });
+
+// export function obtenerURLdeDescarga() {
+//   const fileRef = ref(storage,'books/fucking_prueba.pdf' );
+//   return getDownloadURL(fileRef);
+// }
+//! Probando:
+export function obtenerURLdeDescarga(path) {
+  const fileRef = ref(storage,path );
+  return getDownloadURL(fileRef);
+}
 
 //Firebase Emulator
 

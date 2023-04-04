@@ -5,9 +5,10 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #fff;
+    background-color: #222831;
     border-radius: 20px;
     font-size: 1.3rem;
+    color:#fff;
 
 }
 .circle-container , .circle-out , .circle-inner{
@@ -28,7 +29,7 @@
 .circle-inner{
     width: 110px;
     height: 110px;
-    background-color: #fff;
+    background-color: #222831;
     border-radius: 50%;
 }
 

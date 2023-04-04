@@ -10,3 +10,10 @@
     height: 80px;
     z-index: 100;
 }
+.header-title-img{
+    display: flex;
+}
+.header-title-img img{
+    margin-left: 0.5rem;
+    width: 50px;
+}
