@@ -1,17 +1,16 @@
 import { useState } from "react";
 import axios from "axios";
-import {addWord} from '../../firebase-crud';
+import { addWord } from "../../firebase-crud";
 import "./Dic.css";
 
 export const Dic = () => {
   const [inputText, setInputText] = useState("");
   const [definition, setDefinition] = useState("");
-  const [definitionState, setDefinitionState] = useState(false)
-  //   const [translatedResult, setTranslatedResult] = useState('');
+  const [definitionState, setDefinitionState] = useState(false);
 
   //!Agregado
   const [translate, setTranslate] = useState("");
-  const [translateState, setTranslateState] = useState(false)
+  const [translateState, setTranslateState] = useState(false);
 
   const handleDefinition = () => {
     axios
@@ -22,14 +21,14 @@ export const Dic = () => {
       .catch((error) => {
         console.error(error);
       });
-      setDefinitionState(true);
-      setTranslateState(false);
+    setDefinitionState(true);
+    setTranslateState(false);
   };
 
-  const handleTranslate = () =>{
+  const handleTranslate = () => {
     //! Agregado
     const encodedParams = new URLSearchParams();
-    encodedParams.append("q", inputText); 
+    encodedParams.append("q", inputText);
     encodedParams.append("target", "es");
     encodedParams.append("source", "en");
 
@@ -55,9 +54,9 @@ export const Dic = () => {
         setTranslate(wordTranslated);
       })
       .catch((err) => console.error(err));
-      setDefinitionState(false);
-      setTranslateState(true);
-  }
+    setDefinitionState(false);
+    setTranslateState(true);
+  };
 
   const handleAddWord = async (e) => {
     e.preventDefault();
@@ -76,19 +75,6 @@ export const Dic = () => {
         </span>
         Coloca la palabra que quieres consultar aquí:
       </h2>
-
-      {/* <input
-          type="text"
-          value={inputText}
-          onChange={(event) => setInputText(event.target.value)}
-          placeholder="Write here ..."
-        />
-        <button onClick={handleDefinition} class="button-search">
-            
-            <span className="button-content-search">Search</span>
-        </button>
-        <span className='result-dic'>{definition}</span> */}
-
       <input
         type="text"
         value={inputText}
@@ -104,12 +90,22 @@ export const Dic = () => {
         </button>
       </div>
 
-      <span className="result-dic">{((definitionState) && definition)|| translate}</span>
+      <span className="result-dic">
+        {(definitionState && definition) || translate}
+      </span>
 
-      {(translateState)&&(<div className="add-to-my-words"><span>Add to 'My Words'</span><span><img src={require("../../img/plus.png")} alt="" onClick={handleAddWord}/></span></div>)}
-
-      {/* <button onClick={handleTranslate}>Traducir a español</button> */}
-      {/* <p>{translatedResult}</p> */}
+      {translateState && (
+        <div className="add-to-my-words">
+          <span>Add to 'My Words'</span>
+          <span>
+            <img
+              src={require("../../img/plus.png")}
+              alt=""
+              onClick={handleAddWord}
+            />
+          </span>
+        </div>
+      )}
     </div>
   );
 };

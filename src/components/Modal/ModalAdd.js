@@ -70,9 +70,6 @@ export const ModalAdd = (props) => {
               <Button variant="secondary" onClick={handleClose}>
                 Close
               </Button>
-              {/* <Button variant="danger" onClick={handleClose}>
-            Eliminar
-          </Button> */}
               <Button variant="primary" type="submit">
                 Add
               </Button>

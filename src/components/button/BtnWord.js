@@ -1,9 +1,6 @@
 import './BtnWord.css'
 export const BtnWord = ({text="Default" , color ={h:345, s:100,l:47} , size={width:40, height: 20}}) => {
 
-  // const stylex={background: `conic-gradient(${color} ${3.6*end}deg, #e9ecef 0deg)`};
-
-  // const styleFrontBtn={background:`hsl(${color.h}, ${color.s}%, ${color.l}%)` ,padding: `${size.height}px ${size.width}px`}
   const styleFrontBtn={
     background:`hsl(${color.h}, ${color.s}%, ${color.l}%)` ,
     padding:` ${size.height}px ${size.width}px`,

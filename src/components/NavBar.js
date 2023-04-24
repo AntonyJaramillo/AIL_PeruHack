@@ -1,18 +1,11 @@
 import "./NavBar.css";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../context/authContext";
-// import { useState } from "react";
+
 
 export const NavBar = () => {
   const { user ,logout } = useAuth();
   // console.log(user.displayName, user.email,user.photoURL);
-  // const [userName, setUserName] = useState(user.displayName);
-
-  // if(userName == null){
-  // setUserName("User");
-  // }else{
-  // setUserName(userName.split(" ")[0].charAt(0).toUpperCase() + userName.split(" ")[0].slice(1).toLowerCase());}
-
   const handleLogout = async () => {
     try {
       await logout();

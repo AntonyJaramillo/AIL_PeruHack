@@ -1,6 +1,6 @@
-import { Document, Page, pdfjs } from "react-pdf/dist/esm/entry.webpack";
+import { Document, Page} from "react-pdf/dist/esm/entry.webpack";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect} from "react";
 import { obtenerURLdeDescarga } from "../../firebase-config";
 import "./Sample.css";
 
@@ -13,15 +13,6 @@ import { BtnBack } from "../button/BtnBack";
 
 export const MyPDFViewer = ({ url }) => {
   const [urlResp, setUrlResp] = useState(null);
-
-  // obtenerURLdeDescarga()
-  //   .then((urlRes) => {
-  //     console.log("URL de descarga:", urlRes);
-  //     setUrlResp(urlRes);
-  //   })
-  //   .catch((error) => {
-  //     console.log("Ocurrió un error al obtener la URL del archivo PDF:", error);
-  //   });
 
   useEffect(() => {
     obtenerURLdeDescarga(url) // Paso la prop `url` a la función `obtenerURLdeDescarga`
@@ -71,13 +62,6 @@ export const MyPDFViewer = ({ url }) => {
 
   return (
     <>
-      {/* <iframe
-        title="This is a unique title"
-        src={`${urlResp}#page=1`}
-        width="500"
-        height="375"
-      ></iframe> */}
-
       <div className="pdf-viewer">
         {read === false && (
           <>
@@ -116,12 +100,7 @@ export const MyPDFViewer = ({ url }) => {
 
             <div className="btn-back-pdfs" onClick={handleBackPDFs}>
               <BtnBack/>
-              {/* <BtnWord text="Back" size={{ width: 20, height: 6 }} /> */}
             </div>
-
-            {/* <div className="btn-read-container">
-              <BtnWord text="Back" />
-            </div> */}
           </>
         )}
       </div>

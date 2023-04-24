@@ -13,7 +13,7 @@
     align-items: center;
     justify-content: space-around;
     margin: 2rem 0;
-    flex-wrap: wrap;
+    
 }
 .last-word-learned{
     display: flex;
@@ -47,4 +47,13 @@
 .last-word-learned p span img{
     margin-right: 0.5rem;
     width: 50px;
+}
+
+@media (max-width: 1400px) {
+    .progress-container{
+        flex-direction: column;
+    }
+    .ciclebar-item{
+        margin-top:10px ;
+    }
 }

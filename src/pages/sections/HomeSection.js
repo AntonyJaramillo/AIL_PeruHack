@@ -2,9 +2,13 @@ import { Header } from "../../components/Header";
 import { CircleBar } from "../../components/progress/CircleBar";
 import { Word } from "../../components/word/Word";
 import "./css/HomeSection.css";
-import { ModalAdd } from "../../components/Modal/ModalAdd";
 import { useState, useEffect } from "react";
 import { getWords } from "../../firebase-crud";
+
+import goal_img from "../../img/goal.png"
+import chatbot_img from "../../img/chatbot.png"
+
+
 
 export const HomeSection = () => {
   const [mywords, setMyWords] = useState([]);
@@ -22,22 +26,29 @@ export const HomeSection = () => {
 
   return (
     <div className="home-section">
-      <Header text="My progress" imgURL={require("../../img/goal.png")} />
+      {/* <Header text="My progress" imgURL={require("../../img/goal.png")} /> */}
+      <Header text="My progress" imgURL={goal_img} />
       <div className="home-content">
         <div className="progress-container">
-          <CircleBar end={80} title="My words" info="20" color="#02a499" />
-          <CircleBar
+          <div className="ciclebar-item">
+            <CircleBar  end={80} title="My words" info="20" color="#02a499" />
+          </div>
+          <div className="ciclebar-item">
+            <CircleBar 
             end={50}
             title="Speaking time"
             info="45min"
             color="#0866c6"
-          />
-          <CircleBar
-            end={30}
-            title="Writing time"
-            info="20min"
-            color="#ec4561"
-          />
+           />
+          </div>
+          <div className="ciclebar-item">
+            <CircleBar
+              end={30}
+              title="Writing time"
+              info="20min"
+              color="#ec4561"
+            />
+          </div>
         </div>
         <div className="last-word-learned">
           <h2>Last words learned</h2>
@@ -52,8 +63,8 @@ export const HomeSection = () => {
                 );
               })}
           </div>
-          <p><span><img src={require("../../img/chatbot.png")} alt="" /></span> "A little progress each day ads up to big results"</p>
-          {/* <ModalAdd /> */}
+          {/* <p><span><img src={require("../../img/chatbot.png")} alt="" /></span> "A little progress each day ads up to big results"</p> */}
+          <p><span><img src={chatbot_img} alt="" /></span> "A little progress each day ads up to big results"</p>
         </div>
       </div>
     </div>

@@ -12,7 +12,6 @@ export const Reading = () => {
   // const [paths, setPaths] = useState(null);
   //!AGREGADO
   const [path, setPath] = useState(null);
-  //!
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,12 +31,6 @@ export const Reading = () => {
   async function myFunction() {
     try {
       const res = await resFile();
-      // console.log(res);
-      // Utiliza la constante "res" aquí
-      // console.log(res.items[0]._location.path_);
-      // const pathItems = res.items.map(item =>item._location.path_)
-      // console.log(pathItems);
-      // setPaths(pathItems);
       //!AGREGADO
       if (res.items.length >= 1) {
         setPath(res.items[0]._location.path_);
@@ -53,7 +46,6 @@ export const Reading = () => {
     <div className="reading-section">
       <Header text="My Readings" imgURL={require("../../img/read.png")} />
       <div className="reading-content">
-        {/* <h1>{resFile.items.length}</h1> */}
         {(respfiles === 0 && (
           <>
             <h2>
@@ -97,35 +89,7 @@ export const Reading = () => {
           </>
         )) || (
           <>
-            {/* <h1>Aqui van los pdf agregados</h1> */}
-            {/* //*COMENT TEMPORAL
-            <MyPDFViewer url="books/fucking_prueba.pdf" />
-            //* */}
             {path != null && <MyPDFViewer url={path} />}
-
-            {/* <form onSubmit={handleSubmit} className="form-add-file">
-              <input
-                type="file"
-                name="file"
-                id="file"
-                onChange={(e) =>
-                  setfile({
-                    filex: e.target.files[0],
-                    name: e.target.files[0].name,
-                  })
-                }
-                required
-                className="input-file"
-              />
-
-              <div className="arrow-btn-container">
-                <div className="add-file-container">
-                  <button className="btn-addFile">
-                    <span>Add File</span>
-                  </button>
-                </div>
-              </div>
-            </form> */}
           </>
         )}
       </div>

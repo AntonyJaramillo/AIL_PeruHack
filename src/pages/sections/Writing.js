@@ -1,6 +1,6 @@
 import { Header } from "../../components/Header";
 import "./css/Writing.css";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import {
   MainContainer,
@@ -15,37 +15,8 @@ import {
 const API_KEY = ""; //Put here your API_KEY
 
 export const Writing = () => {
-  // const handlePrompt = async ()=>{
-  //   const apiInitialPrompt = [{ role: "user", content: `"Instrucciones"
-  //   -Siempre respondeme en el idioma igles
-  //   -No respondas en español por ningun motivo
-  //   ` }];
-
-  //   const apiRequest = {
-  //     model: "gpt-3.5-turbo",
-  //     messages: apiInitialPrompt,
-  //   };
-  //   await fetch("https://api.openai.com/v1/chat/completions", {
-  //     method: "POST",
-  //     headers: {
-  //       Authorization: `Bearer ${API_KEY}`,
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(apiRequest),
-  //   })
-  //     .then((data) => data.json())
-  //     .then((data) => {
-  //       console.log({ message: data.choices[0].message.content, sender: "Chatbot" })
-  //     })
-  //     .catch((error) => console.log(error));
-  // }
-
-  // useEffect(() => {
-  //   handlePrompt();
-  // }, [])
 
   const [promptController, setPromptController] = useState(true);
-
   /*=============================================================== */
   const [messages, setMessages] = useState([
     {
@@ -123,7 +94,7 @@ export const Writing = () => {
       .catch((error) => console.log(error));
   };
 
-  // console.log(messages);
+  
   const myMessages = [...messages];
 
   if (messages.length >= 3) {
