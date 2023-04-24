@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.cabc8c25.css",
-    "main.js": "/static/js/main.f05b7660.js",
+    "main.js": "/static/js/main.374de9a7.js",
     "static/media/prueba-ail.pdf": "/static/media/prueba-ail.34c39355c074e38554b7.pdf",
     "pdf.worker.js": "/d2756c7d7d0391dcb5f9679ccdbbe77f.js",
     "static/media/MoreSugar-Regular.otf": "/static/media/MoreSugar-Regular.8b607b578c1401b9fe5c.otf",
@@ -38,10 +38,10 @@
     "static/media/voice.png": "/static/media/voice.1722d9e9544c8e954a97.png",
     "index.html": "/index.html",
     "main.cabc8c25.css.map": "/static/css/main.cabc8c25.css.map",
-    "main.f05b7660.js.map": "/static/js/main.f05b7660.js.map"
+    "main.374de9a7.js.map": "/static/js/main.374de9a7.js.map"
   },
   "entrypoints": [
     "static/css/main.cabc8c25.css",
-    "static/js/main.f05b7660.js"
+    "static/js/main.374de9a7.js"
   ]
 }
