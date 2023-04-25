@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/AIL_PeruHack/static/css/main.83afa4c0.css",
-    "main.js": "/AIL_PeruHack/static/js/main.9e5d77af.js",
+    "main.js": "/AIL_PeruHack/static/js/main.c71bf3b9.js",
     "static/media/prueba-ail.pdf": "/AIL_PeruHack/static/media/prueba-ail.34c39355c074e38554b7.pdf",
     "pdf.worker.js": "/AIL_PeruHack/d2756c7d7d0391dcb5f9679ccdbbe77f.js",
     "static/media/MoreSugar-Regular.otf": "/AIL_PeruHack/static/media/MoreSugar-Regular.8b607b578c1401b9fe5c.otf",
@@ -38,10 +38,10 @@
     "static/media/voice.png": "/AIL_PeruHack/static/media/voice.1722d9e9544c8e954a97.png",
     "index.html": "/AIL_PeruHack/index.html",
     "main.83afa4c0.css.map": "/AIL_PeruHack/static/css/main.83afa4c0.css.map",
-    "main.9e5d77af.js.map": "/AIL_PeruHack/static/js/main.9e5d77af.js.map"
+    "main.c71bf3b9.js.map": "/AIL_PeruHack/static/js/main.c71bf3b9.js.map"
   },
   "entrypoints": [
     "static/css/main.83afa4c0.css",
-    "static/js/main.9e5d77af.js"
+    "static/js/main.c71bf3b9.js"
   ]
 }
